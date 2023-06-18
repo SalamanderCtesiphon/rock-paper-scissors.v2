@@ -2,11 +2,36 @@
 
 const getComputerChoice = function() {
   const index = Math.floor(Math.random() * 3);
-  const computerChoices = [ 'Rock', 'Paper', 'Scissors'];
+  const computerChoices = [ 'rock', 'paper', 'scissors'];
   return computerChoices[index];
 };
 
 let playerWins = 0;
 let computerwins = 0;
 
-console.log(getComputerChoice());
+
+const playRound = function(playerSelction, computerSelection) {
+  if(playerSelction === 'rock' && computerSelection === 'scissors') {
+    return 'You win! Rock beats Scissors';
+  } else if(playerSelction === 'paper' && computerSelection === 'rock') {
+    return 'You win! Paper beats Rock';
+  } else if(playerSelction === 'scissors' && computerSelection === 'paper') {
+    return 'You win! Scissors beat Paper';
+  } else if(playerSelction === 'paper' && computerSelection === 'scissors') {
+    return 'You lose! Scissors beat paper';
+  } else if(playerSelction === 'scissors' && computerSelection === 'rock') {
+    return 'You lose! Rock beats scissors';
+  } else if(playerSelction === 'rock' && computerSelection === 'paper') {
+    return 'You lose! Paper beats Rock';
+  } else {
+    return "Tie!";
+  }
+
+};
+
+const playerSelction = getComputerChoice();
+const computerSelection = getComputerChoice();
+console.log(`player selection: ${playerSelction}`);
+console.log(`computer selection: ${computerSelection}`);
+
+console.log(playRound(playerSelction, computerSelection));
