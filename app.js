@@ -1,16 +1,48 @@
 /* let playerSelction = prompt("Choose your item: rock, paper or scissors"); */
 
-let playerSelction = 'rocm';
+let playerSelction;
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    if(button.id == 1) {
+      playerSelction = 'rock';
+    } else if(button.id == 3) {
+      playerSelction = 'scissors';
+    } else if (button.id == 2) {
+      playerSelction = 'paper'
+    } else {
+      return null;
+    }
+    const player = document.querySelector('.player');
+    player.textContent = `You have selected: ${playerSelction.toUpperCase()}`;
+  });
+});
+
+
 
 const getComputerChoice = function() {
   const index = Math.floor(Math.random() * 3);
-  const computerChoices = [ 'rock', 'paper', 'scissors'];
+  const computerChoices = [ 'ROCK', 'PAPER', 'SCISSORS'];
   return computerChoices[index];
 };
+
+let computerSelection = getComputerChoice();
+
+
+const opponent = document.querySelector('.comp-selection');
+opponent.textContent = computerSelection;
+
+
+
+
 
 let playerWins = 0;
 let computerWins = 0;
 let ties = 0;
+
+
 
 
 const playRound = function(playerSelction, computerSelection) {
