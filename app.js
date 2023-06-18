@@ -1,5 +1,6 @@
-let playerSelction = prompt("Choose your item: rock, paper or scissors");
+/* let playerSelction = prompt("Choose your item: rock, paper or scissors"); */
 
+let playerSelction = 'rocm';
 
 const getComputerChoice = function() {
   const index = Math.floor(Math.random() * 3);
@@ -33,7 +34,7 @@ const playRound = function(playerSelction, computerSelection) {
 };
 
 
-
+/* 
 
 const game = function() {
   for(let i = 0; i < 5; i++) {
@@ -56,4 +57,4 @@ player wins: ${playerWins}`)
   }
 };
 
-game();
+game(); */
