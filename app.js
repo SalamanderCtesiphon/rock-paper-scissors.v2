@@ -1,4 +1,5 @@
-
+/* let playerSelction = prompt("Choose your item: rock, paper or scissors"); */
+let playerSelction = 'rock';
 
 const getComputerChoice = function() {
   const index = Math.floor(Math.random() * 3);
@@ -7,39 +8,40 @@ const getComputerChoice = function() {
 };
 
 let playerWins = 0;
-let computerwins = 0;
+let computerWins = 0;
+let ties = 0;
 
 
 const playRound = function(playerSelction, computerSelection) {
   if(playerSelction === 'rock' && computerSelection === 'scissors') {
-    return 'You win! Rock beats Scissors';
+    return playerWins += 1;
   } else if(playerSelction === 'paper' && computerSelection === 'rock') {
-    return 'You win! Paper beats Rock';
+    return playerWins += 1;
   } else if(playerSelction === 'scissors' && computerSelection === 'paper') {
-    return 'You win! Scissors beat Paper';
+    return playerWins += 1;
   } else if(playerSelction === 'paper' && computerSelection === 'scissors') {
-    return 'You lose! Scissors beat paper';
+    return computerWins =+ 1;
   } else if(playerSelction === 'scissors' && computerSelection === 'rock') {
-    return 'You lose! Rock beats scissors';
+    return computerWins =+ 1;
   } else if(playerSelction === 'rock' && computerSelection === 'paper') {
-    return 'You lose! Paper beats Rock';
+    return computerWins =+ 1;
   } else {
-    return "Tie!";
+    return ties += 1;
   }
 
 };
 
-const playerSelction = getComputerChoice();
+
 
 
 const game = function() {
   for(let i = 0; i < 5; i++) {
     const computerSelection = getComputerChoice();
-
-    console.log(`player selection: ${playerSelction}`);
-    console.log(`computer selection: ${computerSelection}`);
-    console.log(playRound(playerSelction, computerSelection));
-  }
-}
+    playRound(playerSelction, computerSelection);
+  };
+  console.log(`ties: ${ties}`);
+  console.log(`computer wins: ${computerWins}`);
+  console.log(`player wins: ${playerWins}`);
+};
 
 game();
