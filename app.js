@@ -21,11 +21,11 @@ const playRound = function(playerSelction, computerSelection) {
   } else if(playerSelction === 'scissors' && computerSelection === 'paper') {
     return playerWins += 1;
   } else if(playerSelction === 'paper' && computerSelection === 'scissors') {
-    return computerWins =+ 1;
+    return computerWins += 1;
   } else if(playerSelction === 'scissors' && computerSelection === 'rock') {
-    return computerWins =+ 1;
+    return computerWins += 1;
   } else if(playerSelction === 'rock' && computerSelection === 'paper') {
-    return computerWins =+ 1;
+    return computerWins += 1;
   } else {
     return ties += 1;
   }
