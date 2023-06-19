@@ -31,7 +31,6 @@ const getComputerChoice = function() {
   return computerChoices[index];
 };
 
-let computerSelection = getComputerChoice();
 
 
 
@@ -39,15 +38,10 @@ let computerSelection = getComputerChoice();
 
 
 
-let playerWins = 0;
-let computerWins = 0;
-let ties = 0;
 
-const playerScore = document.getElementById('playerScore');
-playerScore.textContent = `${playerWins}`;
 
-const computerScore = document.getElementById('computerScore');
-computerScore.textContent = `${computerWins}`;
+
+
 
 
 const playRound = function(playerSelction, computerSelection) {
@@ -75,16 +69,23 @@ play.addEventListener('click', () => {
   game();
 });
 
-
+let playerWins = 0;
+let computerWins = 0;
+let ties = 0;
 
 
 const game = function() {
+  const playerScore = document.getElementById('playerScore');
+  const computerScore = document.getElementById('computerScore');
+  const cardContent = document.querySelector('.card__content');
+  
+
   for(let i = 0; i < 5; i++) {
+    const round = document.createElement('div');
     const computerSelection = getComputerChoice();
     playRound(playerSelction, computerSelection);
-    console.log(`Round ${i + 1}
-    computer wins: ${computerWins} 
-    player wins: ${playerWins}`)
+    round.textContent = `Round ${i + 1} computer wins: ${computerWins} player wins: ${playerWins}`;
+    cardContent.appendChild(round);
   };
   console.log('Final Results:')
   console.log(`ties: ${ties}`);
@@ -97,8 +98,15 @@ const game = function() {
   } else {
     console.log('tie');
   }
+  playerScore.textContent = `${playerWins}`;
+  computerScore.textContent = `${computerWins}`
+
 };
 
 
 
-const cardContent = document.querySelector('.card__content');
+
+
+
+
+
