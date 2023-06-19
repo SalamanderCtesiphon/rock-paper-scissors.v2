@@ -1,3 +1,7 @@
+:root {
+  --back-color: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +23,7 @@ header {
   justify-content: center;
   padding:  1em 0;
   width: 100%;
-  box-shadow: 1px 1px 7px 1px #fff;
+  box-shadow: 1px 1px 7px 1px #00DDEB;
   margin-bottom: .5em;
 }
 
@@ -96,12 +100,12 @@ button:active {
   width: 100vw;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
+  padding: .5em;
 }
 
 .utility-div {
-  padding: 2em;
-  width: 60vw;
+  padding: .5em;
+  width: 25vw;
   display: flex;
   justify-content: space-between;
 }
@@ -121,23 +125,23 @@ button:active {
 }
 
 .player {
-  height: 5em;
+  height: 2em;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2em;
+  padding: .5em;
 }
 
 .container {
   display: flex;
-  width: 50vw;
+  width: 25vw;
   justify-content: space-between;
-  padding: 1em;
+  padding: .5em;
 }
 
 .card {
   width: 40vw;
-  height: 30vh;
+  height: 50vh;
   border-radius: 20px;
   padding: 5px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
