@@ -42,7 +42,11 @@ let playerWins = 0;
 let computerWins = 0;
 let ties = 0;
 
+const playerScore = document.getElementById('playerScore');
+playerScore.textContent = `${playerWins}`;
 
+const computerScore = document.getElementById('computerScore');
+computerScore.textContent = `${computerWins}`;
 
 
 const playRound = function(playerSelction, computerSelection) {
