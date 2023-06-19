@@ -10,11 +10,11 @@ const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     if(button.id == 1) {
-      playerSelction = 'rock';
+      playerSelction = 'ROCK';
     } else if(button.id == 3) {
-      playerSelction = 'scissors';
+      playerSelction = 'SCISSORS';
     } else if (button.id == 2) {
-      playerSelction = 'paper'
+      playerSelction = 'PAPER';
     } else {
       return null;
     }
@@ -52,17 +52,17 @@ computerScore.textContent = `${computerWins}`;
 
 const playRound = function(playerSelction, computerSelection) {
   console.log(`player: ${playerSelction} computer: ${computerSelection}`)
-  if(playerSelction === 'rock' && computerSelection === 'scissors') {
+  if(playerSelction === 'ROCK' && computerSelection === 'SCISSORS') {
     return playerWins += 1;
-  } else if(playerSelction === 'paper' && computerSelection === 'rock') {
+  } else if(playerSelction === 'PAPER' && computerSelection === 'ROCK') {
     return playerWins += 1;
-  } else if(playerSelction === 'scissors' && computerSelection === 'paper') {
+  } else if(playerSelction === 'SCISSORS' && computerSelection === 'PAPER') {
     return playerWins += 1;
-  } else if(playerSelction === 'paper' && computerSelection === 'scissors') {
+  } else if(playerSelction === 'PAPER' && computerSelection === 'SCISSORS') {
     return computerWins += 1;
-  } else if(playerSelction === 'scissors' && computerSelection === 'rock') {
+  } else if(playerSelction === 'SCISSORS' && computerSelection === 'ROCK') {
     return computerWins += 1;
-  } else if(playerSelction === 'rock' && computerSelection === 'paper') {
+  } else if(playerSelction === 'ROCK' && computerSelection === 'PAPER') {
     return computerWins += 1;
   } else {
     return ties += 1;
@@ -70,16 +70,21 @@ const playRound = function(playerSelction, computerSelection) {
 
 };
 
+const play = document.getElementById('play');
+play.addEventListener('click', () => {
+  game();
+});
 
-/* 
+
+
 
 const game = function() {
   for(let i = 0; i < 5; i++) {
     const computerSelection = getComputerChoice();
     playRound(playerSelction, computerSelection);
     console.log(`Round ${i + 1}
-computer wins: ${computerWins} 
-player wins: ${playerWins}`)
+    computer wins: ${computerWins} 
+    player wins: ${playerWins}`)
   };
   console.log('Final Results:')
   console.log(`ties: ${ties}`);
@@ -94,4 +99,6 @@ player wins: ${playerWins}`)
   }
 };
 
-game(); */
+
+
+const cardContent = document.querySelector('.card__content');
