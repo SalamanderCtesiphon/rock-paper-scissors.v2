@@ -1,3 +1,6 @@
+const currentYear = document.querySelector('.year');
+currentYear.textContent = new Date().getFullYear();
+
 /* let playerSelction = prompt("Choose your item: rock, paper or scissors"); */
 
 let playerSelction;
