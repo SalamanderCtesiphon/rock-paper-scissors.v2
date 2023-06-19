@@ -107,7 +107,7 @@ button:active {
   padding: .5em;
   width: 25vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .score {
