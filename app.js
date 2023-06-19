@@ -31,8 +31,6 @@ const getComputerChoice = function() {
 let computerSelection = getComputerChoice();
 
 
-const opponent = document.querySelector('.comp-selection');
-opponent.textContent = computerSelection;
 
 
 
