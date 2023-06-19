@@ -45,7 +45,6 @@ const getComputerChoice = function() {
 
 
 const playRound = function(playerSelction, computerSelection) {
-  console.log(`player: ${playerSelction} computer: ${computerSelection}`)
   if(playerSelction === 'ROCK' && computerSelection === 'SCISSORS') {
     return playerWins += 1;
   } else if(playerSelction === 'PAPER' && computerSelection === 'ROCK') {
@@ -72,6 +71,7 @@ play.addEventListener('click', () => {
 let playerWins = 0;
 let computerWins = 0;
 let ties = 0;
+let roundNumber = 0;
 
 
 const game = function() {
@@ -81,10 +81,20 @@ const game = function() {
   
 
   for(let i = 0; i < 5; i++) {
+    roundNumber +=1;
     const round = document.createElement('div');
+    round.classList.add('round')
     const computerSelection = getComputerChoice();
     playRound(playerSelction, computerSelection);
-    round.textContent = `Round ${i + 1} computer wins: ${computerWins} player wins: ${playerWins}`;
+    const roundNum = document.createElement('div');
+    roundNum.textContent = `Round: ${roundNumber}`;
+    round.appendChild(roundNum);
+    const comp = document.createElement('div');
+    comp.textContent = `Computer chooses: ${computerSelection}`;
+    round.appendChild(comp);
+    const current = document.createElement('div');
+    current.textContent = `Current score: player: ${playerWins}  computer: ${computerWins}`;
+    round.appendChild(current);
     cardContent.appendChild(round);
   };
   console.log('Final Results:')
@@ -103,7 +113,10 @@ const game = function() {
 
 };
 
-
+const refresh = document.querySelector('.refresh');
+refresh.addEventListener('click', () => {
+  window.location.reload();
+})
 
 
 
